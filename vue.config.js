@@ -25,8 +25,8 @@ module.exports = {
     host: '0.0.0.0',
     open: false,
     overlay: {
-      warnings: false,
-      errors: false
+      warnings: true,
+      errors: true
     },
     proxy: {
       '/api': {

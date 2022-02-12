@@ -5,6 +5,9 @@ import store from './store'
 import FastClick from 'fastclick'
 import Utils from './utils'
 
+// 引入全局样式
+import './styles/index.scss'
+// 引入svg
 import './icons'
 
 // 解决移动端点击延迟200ms的问题
