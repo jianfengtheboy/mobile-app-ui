@@ -17,6 +17,7 @@ export default {
   loginSuccess(state, data) {
     state.userInfo = data
     state.hasLogin = true
+    cacheUtils.localStorageSet('HASLOGIN', true)
     cacheUtils.sessionStorageSet('USERINFO', data)
   },
   // 注销登录

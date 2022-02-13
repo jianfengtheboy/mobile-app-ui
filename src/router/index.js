@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '../store'
 import appConfig from '../config'
+import { cacheUtils } from 'sun-web-utils'
 
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location, onResolve, onReject) {
@@ -25,9 +26,7 @@ const createRouter = () => new VueRouter({
       name: 'login',
       component: () => import('@/views/login.vue'),
       meta: {
-        title: '',
-        show: false,
-        keepAlive: false
+        title: '登录'
       }
     },
     {
@@ -36,7 +35,7 @@ const createRouter = () => new VueRouter({
       redirect: '/homePage',
       meta: {
         title: '',
-        show: false,
+        showNavBar: false,
         keepAlive: false
       },
       children: [
@@ -48,8 +47,7 @@ const createRouter = () => new VueRouter({
       name: 'error',
       component: () => import('../views/error.vue'),
       meta: {
-        title: '出错了！',
-        keepAlive: false
+        title: '出错了！'
       }
     }
   ]
@@ -63,7 +61,8 @@ export function resetRouter() {
 }
 
 router.beforeEach(async (to, from, next) => {
-  const { hasLogin } = store.state
+  const { token } = store.state
+  const hasLogin = cacheUtils.localStorageGet('HASLOGIN')
   // 无需登录或者已经登录
   if (appConfig.noAuth.includes(to.name) || hasLogin) {
     const newTo = {
@@ -72,7 +71,7 @@ router.beforeEach(async (to, from, next) => {
       params: to.params,
       meta: to.meta
     }
-
+    // 设置页面title
     store.commit('setTitle', to.meta.title)
     const keys = Object.keys(to.query)
     if (keys.length) {
@@ -82,6 +81,27 @@ router.beforeEach(async (to, from, next) => {
       return next(newTo)
     }
     return next()
+  }
+  if (token) {
+    const response = await store.dispatch('FetchUserByToken')
+    if (!response.success) {
+      if (appConfig.tokenErrorCodes.includes(response.data.code)) {
+        return next({
+          name: 'login'
+        })
+      }
+      return next({
+        name: 'error',
+        params: {
+          code: 500,
+          prev: {
+            name: to.name,
+            params: to.params
+          }
+        }
+      })
+    }
+    return next(to)
   }
   next({ name: 'login' })
 })
