@@ -1,27 +1,56 @@
-# Vue 3 + Typescript + Vite
+# vue-app-ui
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+## vue移动端模版
 
-## Recommended IDE Setup
+## Build Setup
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+```bash
+# install dependencies
+yarn OR npm install
 
-### If Using `<script setup>`
+# serve with hot reload at localhost:8080
+yarn dev OR npm run dev
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+# build for production with minification
+yarn build OR npm run build
 
-## Type Support For `.vue` Imports in TS
+# build for production and view the bundle analyzer report
+npm run build --report
+```
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+### 一、系统简介
 
-### If Using Volar
+#### 1.1、概述
+vue3移动端前端项目模版
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+#### 1.2 服务维护者
 
-### If Using Vetur
+- name: jianfengtheboy   email: jianfengtheboy@163.com
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+### 二、系统介绍
+
+#### 2.1、主要技术
+
+- 1、前端：vite2 + vue3 + vue-router + vuex + axios + typescript
+
+#### 2.2、项目结构
+
+##### 文件说明
+
+|文件名称              |说明           |
+|----------------  |------------------|
+|src|项目配置项目开发的所有内容页面|
+|src/assets|配置项目所需的公共的静态资源页面|
+|src/components|配置项目业务相关的公共组件|
+|src/config|配置项目在开发环境和生产环境项目下的一些不同的配置|
+|src/icons|配置项目的svg图标|
+|src/layout|全局布局页面|
+|src/request|封装axios方法|
+|src/router| 项目路由配置|
+|src/store|配置vuex做全局状态管理|
+|src/styles|全局公用css文件|
+|src/utils|全局共用方法|
+|src/views/|配置业务的所有页面|
+|src/App|入口页面|
+|src/main.ts|打包入口文件|
+|vite.config.ts|vite自定义配置和开发代理配置|
