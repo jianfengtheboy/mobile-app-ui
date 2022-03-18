@@ -2,12 +2,8 @@
 
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'App'
-})
+<script lang="ts" setup>
+name: 'App'
 </script>
 
 <style lang="scss">

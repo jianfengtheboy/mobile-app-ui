@@ -1,2 +1,5 @@
+2022-03-18
+完善vant、postcss相关配置
+
 2022-03-11
 添加ReleaseNote.txt文件
