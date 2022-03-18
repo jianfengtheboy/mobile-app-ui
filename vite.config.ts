@@ -4,7 +4,6 @@ import styleImport from 'vite-plugin-style-import'
 import viteCompression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import path from 'path'
-const resolve = (dir: string) => path.join(__dirname, dir)
 
 const proxyDns = {
   testIp: '',
@@ -44,7 +43,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': resolve('src')
+      '@': path.join(__dirname, 'src')
     }
   },
   css: {
