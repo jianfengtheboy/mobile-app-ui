@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
-    "lint-staged": "lint-staged"
+    "serve": "vite preview"
   },
   "dependencies": {
     "axios": "^0.26.1",
