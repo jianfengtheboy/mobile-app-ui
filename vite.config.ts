@@ -17,11 +17,13 @@ export default defineConfig({
     vue(),
     // vant组件按需引入配置
     styleImport({
-      libs: [{
-        libraryName: 'vant',
-        esModule: true,
-        resolveStyle: (name) => `vant/es/${name}/style`
-      }]
+      libs: [
+        {
+          libraryName: 'vant',
+          esModule: true,
+          resolveStyle: name => `vant/es/${name}/style`
+        }
+      ]
     }),
     // gzip打包压缩配置
     viteCompression({
@@ -62,20 +64,14 @@ export default defineConfig({
     postcss: {
       plugins: [
         require('autoprefixer')({
-          overrideBrowserslist: [
-            'Android 4.1',
-            'iOS 7.1',
-            'Chrome > 31',
-            'ff > 31',
-            'ie >= 8'
-          ],
+          overrideBrowserslist: ['Android 4.1', 'iOS 7.1', 'Chrome > 31', 'ff > 31', 'ie >= 8'],
           grid: true
         }),
         require('postcss-import')({}),
         require('postcss-url')({}),
         require('postcss-aspect-ratio-mini')({}),
         require('postcss-write-svg')({
-          utf8 : false
+          utf8: false
         }),
         require('postcss-px-to-viewport')({
           // 需要转换的单位，默认为"px"
@@ -103,16 +99,17 @@ export default defineConfig({
           landscapeWidth: 667
         }),
         require('cssnano')({
-          "cssnano-preset-advanced": {
+          'cssnano-preset-advanced': {
             zindex: false,
             autoprefixer: false
           }
         }),
         require('postcss-viewport-units')({
-          filterRule: rule => rule.selector.indexOf('::after') === -1 && 
-          rule.selector.indexOf('::before') === -1 && 
-          rule.selector.indexOf(':after') === -1 && 
-          rule.selector.indexOf(':before') === -1
+          filterRule: rule =>
+            rule.selector.indexOf('::after') === -1 &&
+            rule.selector.indexOf('::before') === -1 &&
+            rule.selector.indexOf(':after') === -1 &&
+            rule.selector.indexOf(':before') === -1
         }),
         require('postcss-flexbugs-fixes')({})
       ]
@@ -129,7 +126,7 @@ export default defineConfig({
         target: `${currProxy}:8087`, // 端口应与开发环境一致
         ws: true,
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: path => path.replace(/^\/api/, '')
       },
       // ws代理
       '/ws': {

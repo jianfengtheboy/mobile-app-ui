@@ -8,8 +8,8 @@
 import { computed, defineProps } from 'vue'
 
 interface Props {
-  prefix?: String,
-  name: String,
+  prefix?: String
+  name: String
   color?: String
 }
 

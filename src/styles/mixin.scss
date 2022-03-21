@@ -1,23 +1,23 @@
-@import "./function.scss";
+@import './function.scss';
 
 // 多行显示省略号
 @mixin no-wrap-line($line) {
-	display: -webkit-box;
-	-webkit-line-clamp: $line;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	-webkit-box-orient: vertical;
-	autoprefixer: on
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  autoprefixer: on;
 }
 
 // 圆角
 @mixin borderRadius($radius: 5px) {
-	border-radius: $radius;
+  border-radius: $radius;
 }
 
 // transform
 @mixin transform($transform) {
-	transform: $transform;
+  transform: $transform;
 }
 
 // box-sizing

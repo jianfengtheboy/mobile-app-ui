@@ -1,18 +1,14 @@
 <template>
-  <div class="app-container" v-cloak>
+  <div v-cloak class="app-container">
     <router-view v-slot="{ Component }">
-      <component v-if="!$route.meta.keepAlive" :is="Component" />
+      <component :is="Component" v-if="!$route.meta.keepAlive" />
       <keep-alive>
-        <component v-if="$route.meta.keepAlive" :is="Component" />
+        <component :is="Component" v-if="$route.meta.keepAlive" />
       </keep-alive>
     </router-view>
   </div>
 </template>
 
-<script lang="ts" setup>
-name: 'Layout'
-</script>
+<script lang="ts" setup></script>
 
-<style lang='scss' scoped>
-
-</style>
+<style lang="scss" scoped></style>

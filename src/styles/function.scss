@@ -1,12 +1,12 @@
 // 浮动
 @function floatFn($fl) {
-  @if($fl == left) {
+  @if ($fl == left) {
     @return right;
   }
   @return left;
 }
 
 // 方向
-@function direction($dir){
+@function direction($dir) {
   @return $dir;
 }

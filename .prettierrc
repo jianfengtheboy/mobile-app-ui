@@ -11,7 +11,7 @@
   "bracketSpacing": true,
   "jsxBracketSameLine": true,
   "useTabs": false,
-  "eslintIntegration":true,
+  "eslintIntegration": true,
   "overrides": [
     {
       "files": ".prettierrc",

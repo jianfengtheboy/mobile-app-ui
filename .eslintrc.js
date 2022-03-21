@@ -1,6 +1,4 @@
-const { defineConfig } = require('eslint-define-config')
-
-module.exports = defineConfig({
+module.exports = {
   root: true,
   env: {
     browser: true,
@@ -10,19 +8,20 @@ module.exports = defineConfig({
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    ecmaVersion: 2020,
+    ecmaVersion: 12,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true
     }
   },
   extends: [
+    'eslint:recommended',
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
-    'eslint:recommended'
+    'prettier'
   ],
+  plugins: ['vue', '@typescript-eslint', 'prettier'],
   rules: {
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -49,7 +48,7 @@ module.exports = defineConfig({
       }
     ],
     'space-before-function-paren': 'off',
-    'quotes': ['error', 'single'],
+    quotes: ['error', 'single'],
     'comma-dangle': ['error', 'never'],
     'vue/require-default-prop': 'off',
     'vue/custom-event-name-casing': 'off',
@@ -57,6 +56,14 @@ module.exports = defineConfig({
     'vue/comment-directive': 'off',
     'vue/singleline-html-element-content-newline': 'off',
     'vue/html-self-closing': 'off',
-    'vue/max-attributes-per-line': 'off'
+    'vue/max-attributes-per-line': 'off',
+    'prettier/prettier': 'error',
+    'vue/multi-word-component-names': 'off'
+  },
+  globals: {
+    defineProps: 'readonly',
+    defineEmits: 'readonly',
+    defineExpose: 'readonly',
+    withDefaults: 'readonly'
   }
-})
+}
