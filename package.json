@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
-    "prepare": "husky install"
+    "serve": "vite preview"
   },
   "dependencies": {
     "axios": "^0.26.1",
@@ -56,6 +55,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
+      "prettier --write",
       "eslint --fix",
       "git add"
     ]
