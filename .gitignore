@@ -21,5 +21,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+.husky
 package-lock.json
 yarn.lock
