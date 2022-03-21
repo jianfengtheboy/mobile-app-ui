@@ -17,7 +17,7 @@
     "noUnusedParameters": true,
     "experimentalDecorators": true,
     "lib": ["esnext", "dom", "ES2015.Promise"],
-    "types": ["vite/client", "node"],
+    "types": ["vite/client", "node", "vite-plugin-svg-icons/client"],
     "typeRoots": ["./node_modules/@types/", "./types"],
     "incremental": false,
     "noImplicitAny": false,

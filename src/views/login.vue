@@ -4,12 +4,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+name: 'Login'
 
-export default defineComponent({
-  name: 'Login'
-})
+// TODO
+// 1.husky lint-staged 配置
+// 2.vue-router 配置
+// 3.pinia 配置
+// 4.optionalChaining 配置
 </script>
 
 <style lang='scss' scoped>

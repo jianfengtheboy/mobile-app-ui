@@ -1,36 +1,28 @@
 <template>
   <div class="error-page">
-    <van-empty image="error" :description="`出错了，${$route.params.code || '404'}!`"></van-empty>
-    <van-button
-      color="linear-gradient(to right, #ff6034, #ee0a24)"
-      size="small"
-      icon="arrow-left"
-      @click="backToHome"
-    >
-      返回首页
-    </van-button>
+    <Empty image="error" :description="`出错了，404!`">
+      <Button
+        color="linear-gradient(to right, #ff6034, #ee0a24)"
+        size="small"
+        icon="arrow-left"
+        @click="backToHome"
+      >
+        返回首页
+      </Button>
+    </Empty>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { Empty, Button } from 'vant'
+import { useRouter } from 'vue-router'
 
-export default defineComponent({
-  name: 'error',
-  components: {
-    VanEmpty: Empty,
-    VanButton: Button
-  },
-  setup() {
-    function backToHome() {
+const router = useRouter()
 
-    }
-
-    return {
-      backToHome
-    }
-  }
+const backToHome = (() => {
+  router.replace({
+    name: 'homePage'
+  })
 })
 </script>
 

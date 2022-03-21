@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import'
 import viteCompression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 
 const proxyDns = {
@@ -39,11 +40,17 @@ export default defineConfig({
           title: 'vue移动端模版'
         }
       }
+    }),
+    // 处理svg
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), 'src/icons')],
+      symbolId: 'icon-[dir]-[name]',
+      customDomId: 'svg-icon'
     })
   ],
   resolve: {
     alias: {
-      '@': path.join(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src')
     }
   },
   css: {
@@ -111,7 +118,7 @@ export default defineConfig({
       ]
     }
   },
-  base: '/app/',
+  base: './',
   server: {
     host: '0.0.0.0',
     port: 9192,
@@ -135,6 +142,7 @@ export default defineConfig({
     outDir: 'dist/app',
     assetsDir: 'static',
     sourcemap: false,
+    minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
