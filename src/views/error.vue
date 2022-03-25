@@ -1,6 +1,6 @@
 <template>
   <div class="error-page">
-    <Empty image="error" :description="`出错了，404!`">
+    <Empty image="error" :description="`出错了，${$route.params.code || '404'}!`">
       <Button color="linear-gradient(to right, #ff6034, #ee0a24)" size="small" icon="arrow-left" @click="backToHome">
         返回首页
       </Button>

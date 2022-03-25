@@ -32,7 +32,16 @@ vue3 移动端前端项目模版
 
 #### 2.1、主要技术
 
-- 1、前端：vite2 + vue3 + vue-router + vuex + axios + typescript
+- 1、vite@^2.4.4
+- 2、vue@^3.0.5
+- 3、vue-router@^4.0.13
+- 4、pinia@^2.0.12
+- 5、typescript@^4.3.2
+- 6、axios@^0.26.1
+- 7、vant@^3.4.6
+- 8、vconsole@^3.14.2
+- 9、postcss-px-to-viewport@^1.1.1
+- 10、sass@^1.49.9
 
 #### 2.2、项目结构
 
@@ -48,10 +57,10 @@ vue3 移动端前端项目模版
 | src/layout     | 全局布局页面                                       |
 | src/request    | 封装 axios 方法                                    |
 | src/router     | 项目路由配置                                       |
-| src/store      | 配置 vuex 做全局状态管理                           |
+| src/stores     | 配置 pinia 做全局状态管理                           |
 | src/styles     | 全局公用 css 文件                                  |
 | src/utils      | 全局共用方法                                       |
 | src/views/     | 配置业务的所有页面                                 |
 | src/App        | 入口页面                                           |
 | src/main.ts    | 打包入口文件                                       |
-| vite.config.ts | vite 自定义配置和开发代理配置                      |
+| vite.config.ts | vite 自定义配置和开发代理配置等                      |

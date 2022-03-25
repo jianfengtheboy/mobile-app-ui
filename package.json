@@ -17,6 +17,7 @@
     "qs": "^6.10.3",
     "sun-web-utils": "^0.2.3",
     "vant": "^3.4.6",
+    "vconsole": "^3.14.2",
     "vue": "^3.0.5",
     "vue-router": "^4.0.13"
   },
@@ -25,6 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "@vitejs/plugin-vue": "^1.3.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.8",
     "@vue/compiler-sfc": "^3.0.5",
     "autoprefixer": "9.8.6",
     "cssnano": "^4.1.10",
@@ -48,6 +50,7 @@
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-style-import": "1.4.1",
     "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-vconsole": "^1.2.1",
     "vue-tsc": "^0.2.2"
   },
   "browserslist": [

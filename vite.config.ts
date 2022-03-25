@@ -1,20 +1,24 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import styleImport from 'vite-plugin-style-import'
 import viteCompression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { viteVConsole } from 'vite-plugin-vconsole'
 import path from 'path'
 
 const proxyDns = {
   testIp: '',
-  developIp: 'http://xxx.xxx.xxx.xxx'
+  developIp: 'http://xx.xx.xx.xx'
 }
 const currProxy = proxyDns.developIp
 
 export default defineConfig({
   plugins: [
     vue(),
+    // jsx支持
+    vueJsx(),
     // vant组件按需引入配置
     styleImport({
       libs: [
@@ -48,6 +52,16 @@ export default defineConfig({
       iconDirs: [path.resolve(process.cwd(), 'src/icons')],
       symbolId: 'icon-[dir]-[name]',
       customDomId: 'svg-icon'
+    }),
+    // vconsole配置
+    viteVConsole({
+      entry: path.resolve('src/main.ts'),
+      localEnabled: process.env.NODE_ENV !== 'production',
+      enabled: process.env.NODE_ENV !== 'production',
+      config: {
+        maxLogNumber: 1000,
+        theme: 'light'
+      }
     })
   ],
   resolve: {
@@ -123,14 +137,14 @@ export default defineConfig({
     open: false,
     proxy: {
       '/api': {
-        target: `${currProxy}:8087`, // 端口应与开发环境一致
+        target: `${currProxy}:8080`, // 端口应与开发环境一致
         ws: true,
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, '')
+        rewrite: path => path.replace(/^\//, '/')
       },
       // ws代理
       '/ws': {
-        target: `${currProxy}:8087`,
+        target: `${currProxy}:8080`, // 端口应与开发环境一致
         ws: true
       }
     }
