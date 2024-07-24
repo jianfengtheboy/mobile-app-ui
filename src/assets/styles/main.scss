@@ -1,0 +1,27 @@
+:root {
+	--van-floating-bubble-background: var(--van-white) !important;
+}
+
+.van-config-provider {
+	height: 100vh;
+}
+
+.van-theme-dark body {
+	background-color: #000;
+}
+
+.van-theme-light body {
+	background-color: #f7f8fa;
+}
+
+.van-floating-bubble {
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.color-red {
+	color: var(--van-red);
+}
+
+.van-nav-bar--fixed {
+	position: fixed !important;
+}
