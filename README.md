@@ -64,7 +64,7 @@ vue3 移动端前端项目模版
 | src/apis       | 配置项目所有的接口资源                            |
 | src/assets     | 配置项目所需的公共的静态资源页面                    |
 | src/components | 配置项目业务相关的公共组件                         |
-| src/config     | 配置项目在开发环境和生产环境项目下的一些不同的配置     |
+| src/config     | 配置项目的一些全局公共配置                         |
 | src/layouts    | 全局布局页面                                     |
 | src/mock       | 全局模拟接口及模拟数据                             |
 | src/model      | 全局数据模型                                     |
