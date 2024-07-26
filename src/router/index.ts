@@ -1,3 +1,11 @@
+/*
+ * @Author: Sun
+ * @LastEditors: Sun
+ * @Email: jianfengtheboy@163.com
+ * @Date: 2024-01-29 10:58:14
+ * @LastEditTime: 2024-07-26 23:00:21
+ * @Description: 路由
+ */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { SystemName } from '@/config/const'
 import homeRoute from './modules/homeRoute'
@@ -40,7 +48,7 @@ const initRouter = () => {
 const router = initRouter()
 
 // 不需要鉴权的外部界面
-const outerPaths: string[] = ['']
+const outerPaths: string[] = []
 
 router.beforeEach(async (to, _from) => {
 	if (to.meta.title) {

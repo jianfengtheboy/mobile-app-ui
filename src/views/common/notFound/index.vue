@@ -10,7 +10,7 @@ const onBackToHome = () => {
 
 <template>
 	<div class="notFound">
-		<BaseEmpty type="error" description="页面走丢了~">
+		<BaseEmpty type="search" description="页面走丢了~">
 			<van-button icon="arrow-left" round color="linear-gradient(to right, #ff6034, #ee0a24)" @click="onBackToHome">
 				返回首页
 			</van-button>
