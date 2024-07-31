@@ -1,7 +1,7 @@
 {
 	"name": "vue-app-ui",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "vue移动端H5",
 	"scripts": {
 		"dev": "vite",
@@ -30,7 +30,7 @@
 		"@types/node": "^20.4.4",
 		"@vitejs/plugin-vue": "^4.2.3",
 		"compare-func": "^2.0.0",
-		"conventional-changelog-cli": "^5.0.0",
+		"conventional-changelog-cli": "^2.2.2",
 		"conventional-changelog-custom-config": "^0.3.1",
 		"husky": "^8.0.0",
 		"normalize.css": "^8.0.1",
