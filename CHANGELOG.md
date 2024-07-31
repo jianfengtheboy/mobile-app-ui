@@ -1,8 +1,9 @@
-# 0.0.0 (2024-07-31)
+# 1.0.0 (2024-07-31)
 
 
 ### 2024-07-31
 
+* **完善项目模版:** 🧱 chore: 完善项目模版 ([66b83f5](https://github.com/jianfengtheboy/mobile-app-ui/commit/66b83f5))
 * **完善项目模版:** 🧱 chore: 完善项目模版 ([52efa09](https://github.com/jianfengtheboy/mobile-app-ui/commit/52efa09))
 * **完善项目模版:** 🧱 chore: 完善项目模版 ([1c9e266](https://github.com/jianfengtheboy/mobile-app-ui/commit/1c9e266))
 
